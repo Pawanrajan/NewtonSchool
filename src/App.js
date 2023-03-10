@@ -1,19 +1,25 @@
-import Header from './component1/Header';
-import Sidebar from './component1/Sidebar';
-import Main from './component1/Main';
-import Footer from './component1/Footer';
 import './App.css';
+const User = (props) => {
+  const { name } = props;
+  console.log('Props->', props);
+  return (
+    <div className="user-container">
+      <h3>
+        {name.firstName} {name.lastName}
+      </h3>
+      <h3>{props.lastName}</h3>
+    </div>
+  );
+};
 
 function App() {
+  const userName = { firstName: 'pawan', lastName: 'Rajan' };
   return (
-    <div className="main-flex-container">
-      <Header />
-      <div className="container">
-        <Sidebar />
-        <Main />
-      </div>
-      <Footer />
-    </div>
+    <main>
+      <p>hii</p>
+      <User name={userName} />
+      <User name={userName} />
+    </main>
   );
 }
 export default App;
